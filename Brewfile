@@ -1,7 +1,24 @@
 brew "atuin"
 brew "git-town"
+brew "macos-trash", link: true
+brew "mas"
+brew "micro"
+brew "node"
+brew "ripgrep"
+brew "starship"
 brew "uv"
+brew "dockutil"
+cask "arc"
+cask "frappe-books"
+cask "loom"
+cask "orbstack"
+cask "raycast"
+cask "slack"
+cask "tableplus"
 cask "visual-studio-code"
+cask "whatsapp"
+mas "DaisyDisk", id: 411643860
+mas "PDFgear", id: 6469021132
 mas "Telegram", id: 747648890
 vscode "charliermarsh.ruff"
 vscode "humao.rest-client"
