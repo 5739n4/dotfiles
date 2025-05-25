@@ -1,8 +1,11 @@
 ## dotfiles
 
-### install chezmoi and apply this repo
+### install homebrew, chezmoi and apply this repo
 ```shell
-sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply git@github.com:5739n4/dotfiles.git
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" && \
+eval "$(/opt/homebrew/bin/brew shellenv)" && \
+brew install chezmoi && \
+chezmoi init --apply 5739n4
 ```
 
 ### what's being installed?
