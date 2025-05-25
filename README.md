@@ -10,6 +10,8 @@ chezmoi init --apply 5739n4
 
 ### what's being installed?
 * atuin: ✨ Magical shell history
+    - store shell history in a sqlite database
+    - enter to execute a command, tab to edit
 
 ![atuin animated demo](https://raw.githubusercontent.com/atuinsh/atuin/main/demo.gif "atuin animated demo")
 
