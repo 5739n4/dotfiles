@@ -2,7 +2,7 @@
 
 [data]
     email = {{ $email | quote }}
-    brewexec = {{ findExecutable "brew" (list "/opt/homebrew/bin" "/usr/local/bin/brew") }}
+    brewexec = {{ findExecutable "brew" (list "/opt/homebrew/bin" "/usr/local/bin") | quote }}
 
 [edit]
     command = "micro"

@@ -1,4 +1,4 @@
-tap "bendews/tap/apw"
+tap "bendews/tap"
 brew "atuin"
 brew "apw"
 brew "awscli"
