@@ -5,7 +5,7 @@ type apw >/dev/null 2>&1 && exit
 
 case "$(uname -s)" in
 Darwin)
-    eval "$(/opt/homebrew/bin/brew shellenv)"
+    eval "$(/opt/homebrew/bin/brew shellenv || /usr/local/bin/brew shellenv)"
     brew install bendews/homebrew-tap/apw && brew services restart apw
     apw auth
     ;;
