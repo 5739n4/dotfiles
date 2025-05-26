@@ -1,4 +1,4 @@
 #!/bin/bash
 
 # Brewfile hash: {{ include "Brewfile" | sha256sum }}
-/opt/homebrew/bin/brew bundle install --cleanup
+{{ $brewexec }} bundle install --cleanup
