@@ -11,7 +11,7 @@ Darwin)
     echo '🔑  Installing apw' 
     eval "$(/opt/homebrew/bin/brew shellenv 2>/dev/null || /usr/local/bin/brew shellenv)"
     brew install bendews/homebrew-tap/apw && brew services restart apw
-    $(brew --prefix)/apw auth
+    $(brew --prefix)/bin/apw auth
     ;;
 Linux)
     echo "unsupported OS"
