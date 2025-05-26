@@ -1,8 +1,6 @@
-tap "bendews/tap"
 brew "atuin"
-brew "apw", restart_service: :changed
 # brew "awscli"
-brew "chezmoi", link: :overwrite
+brew "chezmoi"
 brew "git-town"
 # brew "mas"
 brew "micro"
@@ -10,7 +8,7 @@ brew "node"
 brew "ripgrep"
 brew "uv"
 brew "dockutil"
-# cask "arc"
+cask "arc"
 # cask "frappe-books"
 # cask "loom"
 # cask "microsoft-teams"

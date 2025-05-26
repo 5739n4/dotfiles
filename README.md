@@ -1,15 +1,16 @@
 ## dotfiles
 
 ### install 
-* xcode command-line tools incl. git
-* chezmoi
 * homebrew 
+* chezmoi
 * apply these dotfiles, incl. [Brewfile](Brewfile)
 
 ```shell
-xcode-select --install; sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply 5739n4
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+eval "$(/opt/homebrew/bin/brew shellenv 2>/dev/null || /usr/local/bin/brew shellenv)"
+brew install chezmoi
+chezmoi init --apply 5739n4
 ```
-
 
 ### what's being installed?
 * atuin: ✨ Magical shell history
