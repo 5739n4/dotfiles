@@ -1,8 +1,8 @@
 tap "bendews/tap"
 brew "atuin"
-brew "apw"
+brew "apw", restart_service: :changed
 brew "awscli"
-brew "chezmoi"
+brew "chezmoi", link: :overwrite
 brew "git-town"
 brew "mas"
 brew "micro"
