@@ -1,13 +1,5 @@
-{{- $email := promptStringOnce . "email" "Email address" -}}
-
-[data]
-    email = {{ $email | quote }}
-    brewexec = {{ findExecutable "brew" (list "/opt/homebrew/bin" "/usr/local/bin") | quote }}
-
 [edit]
     command = "micro"
     args = []
 
-[hooks.read-source-state.pre]
-    command = ".local/share/chezmoi/.install-password-manager.sh"
 
