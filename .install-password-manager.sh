@@ -1,5 +1,6 @@
 #!/bin/sh
 
+eval "$(/opt/homebrew/bin/brew shellenv 2>/dev/null || /usr/local/bin/brew shellenv 2>/dev/null)"
 command -v brew >/dev/null 2>&1 || \
   (echo '🍺  Installing Homebrew' && /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)")
 
@@ -11,7 +12,6 @@ Darwin)
     echo '🔑  Installing apw' 
     eval "$(/opt/homebrew/bin/brew shellenv 2>/dev/null || /usr/local/bin/brew shellenv)"
     brew install bendews/homebrew-tap/apw && brew services restart apw
-    $(brew --prefix)/bin/apw auth
     ;;
 Linux)
     echo "unsupported OS"
