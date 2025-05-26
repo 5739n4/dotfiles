@@ -8,6 +8,12 @@ brew install chezmoi && \
 chezmoi init --apply 5739n4
 ```
 
+
+```shell
+xcode-select –-install; sh -c "$(curl -fsLS get.chezmoi.io)" -- -b /usr/local/bin init --apply 5739n4
+```
+
+
 ### what's being installed?
 * atuin: ✨ Magical shell history
     - store shell history in a sqlite database
