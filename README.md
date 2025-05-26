@@ -7,7 +7,7 @@
 * apply these dotfiles, incl. [Brewfile](Brewfile)
 
 ```shell
-xcode-select –-install; sh -c "$(curl -fsLS get.chezmoi.io)" -- -b /usr/local/bin init --apply 5739n4
+xcode-select --install; sh -c "$(curl -fsLS get.chezmoi.io)" -- -b /usr/local/bin init --apply 5739n4
 ```
 
 
