@@ -11,15 +11,15 @@ brew "dockutil"
 cask "arc"
 cask "frappe-books"
 cask "loom"
-# cask "microsoft-teams"
+cask "microsoft-teams"
 cask "orbstack"
 cask "raycast"
 cask "slack"
 cask "tableplus"
 cask "visual-studio-code"
-# cask "whatsapp"
+cask "whatsapp"
 mas "DaisyDisk", id: 411643860
-# mas "PDFgear", id: 6469021132
+mas "PDFgear", id: 6469021132
 mas "Telegram", id: 747648890
 vscode "charliermarsh.ruff"
 vscode "humao.rest-client"
