@@ -9,7 +9,7 @@ PUB_KEY_PATH="$HOME/.ssh/id_ed25519.pub"
 PUB_KEY=$(< "$PUB_KEY_PATH")
 GITHUB_TOKEN=$(chezmoi secret keyring get --service=github --user="$USER")
 HOSTNAME=$(hostname)
-KEY_TITLE="{{ promptString "input_name" | default $HOSTNAME }}"
+KEY_TITLE="host_$HOSTNAME"
 
 echo "Checking if SSH key is already on GitHub..."
 
