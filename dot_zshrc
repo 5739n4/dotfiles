@@ -1,3 +1,4 @@
 
+[ -f ~/.config/chezmoi/env.sh ] && source ~/.config/chezmoi/env.sh
 export EDITOR=micro
-export KS_DEFAULT_KEYCHAIN=chezmoi
+
