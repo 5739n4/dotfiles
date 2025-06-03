@@ -1,0 +1,29 @@
+#!/bin/bash
+
+set -euo pipefail
+# -e    Exit immediately if any command returns a non-zero status (an error).
+# -u    Treat unset variables as errors and exit immediately.
+# -o pipefail    Fail a pipeline if any command in the pipeline fails.
+
+KEYCHAIN_PATH="$HOME/Library/Keychains/$KS_DEFAULT_KEYCHAIN.keychain-db"
+ICLOUD_KEYCHAIN_SOURCE="$HOME/Library/Mobile Documents/com~apple~CloudDocs/$KS_DEFAULT_KEYCHAIN.keychain-db"
+
+echo "Checking if iCloud keychain file exists at: $KEYCHAIN_PATH"
+
+if [[ -e "$KEYCHAIN_PATH" ]]; then
+  echo "Keychain file already exists at destination: $KEYCHAIN_PATH"
+else
+  echo "Keychain file not found. Creating symbolic link..."
+
+  if [[ -e "$ICLOUD_KEYCHAIN_SOURCE" ]]; then
+    ln -s "$ICLOUD_KEYCHAIN_SOURCE" "$KEYCHAIN_PATH"
+    echo "Symbolic link created from:"
+    echo "  $ICLOUD_KEYCHAIN_SOURCE"
+    echo "to"
+    echo "  $KEYCHAIN_PATH"
+  else
+    echo "Source file does not exist: $ICLOUD_KEYCHAIN_SOURCE"
+    echo "Cannot create symbolic link. Exiting."
+    exit 1
+  fi
+fi

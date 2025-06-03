@@ -32,3 +32,8 @@ chezmoi init --apply 5739n4
 * loom
 * orbstack: Fast, light, simple Docker & Linux
     ![orbstack containers screenshot](https://orbstack.dev/_next/image?url=%2Fimg%2Fhero.png&w=1920&q=75)
+
+
+### secrets storage in iCloud
+#. Follow [guide for ks](https://github.com/loteoo/ks?tab=readme-ov-file#icloud-sync)
+#. Update `KS_DEFAULT_KEYCHAIN` in `~/.zshrc`
