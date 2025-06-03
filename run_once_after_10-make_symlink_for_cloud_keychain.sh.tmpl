@@ -5,8 +5,9 @@ set -euo pipefail
 # -u    Treat unset variables as errors and exit immediately.
 # -o pipefail    Fail a pipeline if any command in the pipeline fails.
 
-KEYCHAIN_PATH="$HOME/Library/Keychains/$KS_DEFAULT_KEYCHAIN.keychain-db"
-ICLOUD_KEYCHAIN_SOURCE="$HOME/Library/Mobile Documents/com~apple~CloudDocs/$KS_DEFAULT_KEYCHAIN.keychain-db"
+KEYCHAIN_FILE="Secrets.keychain"
+KEYCHAIN_PATH="$HOME/Library/Keychains/$KEYCHAIN_FILE-db"
+ICLOUD_KEYCHAIN_SOURCE="$HOME/Library/Mobile Documents/com~apple~CloudDocs/$KEYCHAIN_FILE-db"
 
 echo "Checking if iCloud keychain file exists at: $KEYCHAIN_PATH"
 
@@ -16,6 +17,8 @@ else
   echo "Keychain file not found. Creating symbolic link..."
 
   if [[ -e "$ICLOUD_KEYCHAIN_SOURCE" ]]; then
+    security show-keychain-info $KEYCHAIN_FILE || security list-keychains -s $(security list-keychains | xargs) "$KEYCHAIN_PATH"
+    security list-keychains | grep -q $KEYCHAIN_FILE || security list-keychains -s $(security list-keychains | xargs) "$KEYCHAIN_PATH"
     ln -s "$ICLOUD_KEYCHAIN_SOURCE" "$KEYCHAIN_PATH"
     echo "Symbolic link created from:"
     echo "  $ICLOUD_KEYCHAIN_SOURCE"

@@ -1,1 +1,0 @@
-export KS_DEFAULT_KEYCHAIN=chezmoi
