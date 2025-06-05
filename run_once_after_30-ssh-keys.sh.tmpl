@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+# ~/.local/share/chezmoi/run_after_10-ssh-keys.sh.tmpl
+set -euo pipefail
+
+SSH_CONFIG="$HOME/.ssh/config"
+
+# Exit silently if the user has no ssh config yet
+[[ -f "$SSH_CONFIG" ]] || echo "No SSH config found. Exiting." && exit 0
+
+while IFS= read -r line; do
+  # Trim leading space, ignore comments, match “IdentityFile <path>”
+  [[ $line =~ ^[[:space:]]*IdentityFile[[:space:]]+([^[:space:]]+) ]] || continue
+  raw_path=${BASH_REMATCH[1]}
+
+  # Expand ~ and %-style variables the same way ssh does (best-effort).
+  # shellcheck disable=SC2086
+  eval expanded_path="$raw_path"
+
+  file_name=$(basename "$expanded_path")   # id_rsa, git_ed25519, etc.
+  dest_path="$HOME/.ssh/$file_name"
+
+  if [[ -f "$dest_path" ]]; then
+    echo "✔ $file_name already present – skipping."
+    continue
+  fi
+
+  echo "→ Creating $file_name from ks secret…"
+  ks show "$file_name" > "$dest_path"
+  chmod 600 "$dest_path"
+done < "$SSH_CONFIG"
