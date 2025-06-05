@@ -1,4 +1,6 @@
 
 export EDITOR=micro
 
+eval "$(atuin init zsh)"
+
 alias rm='echo "This is not the command you are looking for."; false'
