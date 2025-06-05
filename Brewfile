@@ -12,6 +12,7 @@ brew "node"
 brew "ripgrep"
 brew "uv"
 cask "arc"
+cask "cursor"
 cask "frappe-books"
 cask "loom"
 cask "microsoft-teams"
@@ -22,6 +23,7 @@ cask "slack"
 cask "tableplus"
 cask "visual-studio-code"
 cask "whatsapp"
+cask "zed"
 mas "DaisyDisk", id: 411643860
 mas "PDFgear", id: 6469021132
 mas "Telegram", id: 747648890
