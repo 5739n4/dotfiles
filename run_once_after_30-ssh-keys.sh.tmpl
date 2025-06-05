@@ -5,7 +5,7 @@ set -euo pipefail
 SSH_CONFIG="$HOME/.ssh/config"
 
 # Exit silently if the user has no ssh config yet
-[[ -f "$SSH_CONFIG" ]] || echo "No SSH config found. Exiting." && exit 0
+[[ -f "$SSH_CONFIG" ]] || exit 0
 
 while IFS= read -r line; do
   # Trim leading space, ignore comments, match “IdentityFile <path>”
