@@ -2,5 +2,10 @@
 export EDITOR="zed --wait"
 
 eval "$(atuin init zsh)"
+eval "$(zoxide init zsh)"
+source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 alias rm='echo "This is not the command you are looking for."; false'
+alias cd="z"
+alias ls="eza --icons=always"
