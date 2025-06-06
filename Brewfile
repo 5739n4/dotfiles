@@ -1,4 +1,5 @@
 tap "loteoo/formulas"
+cask "alacritty", args: { no_quarantine: true }
 brew "atuin"
 brew "aws-sam-cli"
 brew "awscli"
