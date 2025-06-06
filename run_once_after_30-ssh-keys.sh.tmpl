@@ -26,5 +26,6 @@ while IFS= read -r line; do
 
   echo "→ Creating $file_name from ks secret…"
   ks show "$file_name" > "$dest_path"
+  echo "\n" >> "$dest_path"
   chmod 600 "$dest_path"
 done < "$SSH_CONFIG"
