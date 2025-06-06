@@ -13,5 +13,5 @@ blur = true
 option_as_alt = "Both"
 
 [font]
-normal.family = "Fira Code"
+normal.family = "FiraCode Nerd Font Mono"
 size = 14
