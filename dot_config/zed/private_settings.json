@@ -33,5 +33,9 @@
     "mode": "system",
     "light": "One Light",
     "dark": "One Dark"
-  }
+  },
+  "terminal": {
+    "font_family": "FiraCode Nerd Font Mono"
+  },
+  "buffer_font_family": "FiraCode Nerd Font"
 }
