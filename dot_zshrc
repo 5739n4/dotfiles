@@ -15,3 +15,15 @@ setopt HIST_EXPIRE_DUPS_FIRST
 setopt HIST_IGNORE_DUPS
 setopt HIST_IGNORE_SPACE    # cmds starting with space not saved
 setopt HIST_REDUCE_BLANKS
+
+
+eval "$(starship init zsh)"
+eval "$(atuin init zsh)"
+eval "$(zoxide init zsh)"
+source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+alias rm='echo "This is not the command you are looking for. Use \`trash\` instead."; false'
+alias cat="bat --theme auto:system"
+alias cd="z"
+alias ls="eza --icons=always"
