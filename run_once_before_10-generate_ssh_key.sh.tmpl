@@ -1,0 +1,22 @@
+#!/bin/bash
+
+set -euo pipefail
+# -e	Exit immediately if any command returns a non-zero status (an error). Prevents scripts from continuing after a failure.
+# -u	Treat unset variables as errors and exit immediately. Helps catch typos and missing env vars.
+# -o pipefail	Fail a pipeline if any command in the pipeline fails (not just the last one). Improves reliability of `grep
+
+KEY_PATH="$HOME/.ssh/id_ed25519"
+PUB_KEY_PATH="$KEY_PATH.pub"
+HOSTNAME=$(hostname | sed 's/\.local$//')
+
+if [[ ! -f "$KEY_PATH" || ! -f "$PUB_KEY_PATH" ]]; then
+  echo "No SSH key found, generating one..."
+
+  ssh-keygen -t ed25519 -C "host_$HOSTNAME" -f "$KEY_PATH" -N ""
+  eval "$(ssh-agent -s)"
+  ssh-add "$KEY_PATH"
+
+  echo "New SSH key generated at $KEY_PATH"
+else
+  echo "SSH key already exists."
+fi
