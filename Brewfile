@@ -1,6 +1,7 @@
 brew "aws-sam-cli"
 brew "awscli"
 brew "atuin"
+brew "bat"
 brew "chezmoi"
 brew "dockutil"
 brew "eza"
@@ -27,10 +28,13 @@ cask "font-fira-code-nerd-font"
 cask "frappe-books"
 cask "google-chrome"
 cask "json-viewer"
+cask "kando"
 cask "keepassxc"
 cask "linear-linear"
-cask "logi-options+"
 cask "loom"
+cask "microsoft-teams"
+cask "bettermouse"
+cask "mac-mouse-fix"
 cask "ngrok"
 cask "orbstack"
 cask "perimeter81"
@@ -40,6 +44,6 @@ cask "sonos"
 cask "sublime-text"
 cask "tableplus"
 mas "PDFgear", id:6469021132
-mas "Microsoft Outlook", id:985367838
+# mas "Microsoft Outlook", id:985367838
 mas "Telegram", id:747648890
 mas "WireGuard", id:1451685025
