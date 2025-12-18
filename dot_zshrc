@@ -27,3 +27,4 @@ alias rm='echo "This is not the command you are looking for. Use \`trash\` inste
 alias cat="bat --theme auto:system"
 alias cd="z"
 alias ls="eza --icons=always"
+alias aws_sso_stan="aws sso login --sso-session stan"
